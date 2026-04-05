@@ -37,7 +37,6 @@
             background: #0f172a;
         }
 
-        /* Estilització dels subtítols perquè es vegin moderns i molt clars */
         ::cue {
             background-color: rgba(15, 23, 42, 0.85);
             color: #f8fafc;
@@ -55,7 +54,7 @@
             object-fit: cover;
             border-radius: 0.75rem;
             background-color: #1e293b;
-            pointer-events: none; /* Evita que l'usuari pugui pausar-ho per error fent clic al vídeo */
+            pointer-events: none;
         }
     </style>
 </head>
@@ -127,7 +126,7 @@
 
             <div class="flex flex-col md:flex-row gap-6 items-center md:items-stretch">
                 <div class="step-card bg-white p-6 rounded-2xl border border-slate-200 flex-1 w-full relative">
-                    <video class="frame-capture mb-4" src="video_janome-threading.mp4#t=8" preload="metadata" muted playsinline></video>
+                    <video class="frame-capture mb-4" src="video_janome-threading.mp4#t=8" autoplay muted playsinline></video>
                     <span class="text-blue-600 font-black text-xl mb-2 block">01 <i class="fa-solid fa-arrow-right-long text-slate-300 ml-2 align-middle"></i></span>
                     <h4 class="font-bold text-lg">Pujar l'agulla</h4>
                     <p class="text-sm text-slate-600 mt-2">Prem el botó de "Posició d'agulla" al panell frontal per assegurar-te que l'agulla i la palanca tira-fils estan en el seu punt més alt.</p>
@@ -139,7 +138,7 @@
                 </div>
 
                 <div class="step-card bg-white p-6 rounded-2xl border border-slate-200 flex-1 w-full relative">
-                    <video class="frame-capture mb-4" src="video_janome-threading.mp4#t=14" preload="metadata" muted playsinline></video>
+                    <video class="frame-capture mb-4" src="video_janome-threading.mp4#t=14" autoplay muted playsinline></video>
                     <span class="text-blue-600 font-black text-xl mb-2 block">02 <i class="fa-solid fa-flag-checkered text-slate-300 ml-2 align-middle"></i></span>
                     <h4 class="font-bold text-lg">Bloqueig de Seguretat</h4>
                     <p class="text-sm text-slate-600 mt-2">A la pantalla tàctil, prem la icona del "Cadenat" per bloquejar la màquina. Això prevé accidents mentre manipules la zona de l'agulla.</p>
@@ -160,7 +159,7 @@
 
             <div class="flex flex-col md:flex-row gap-6 items-center md:items-stretch">
                 <div class="step-card bg-white p-6 rounded-2xl border border-slate-200 flex-1 w-full relative">
-                    <video class="frame-capture mb-4" src="video_janome-threading.mp4#t=26" preload="metadata" muted playsinline></video>
+                    <video class="frame-capture mb-4" src="video_janome-threading.mp4#t=26" autoplay muted playsinline></video>
                     <span class="text-blue-600 font-black text-xl mb-2 block">01 <i class="fa-solid fa-arrow-right-long text-slate-300 ml-2 align-middle"></i></span>
                     <h4 class="font-bold text-lg">Col·locar el rodet</h4>
                     <p class="text-sm text-slate-600 mt-2">Posa el rodet de fil al passador horitzontal. Assegura't que el fil es desenrotlli per la part superior i cap a tu.</p>
@@ -172,7 +171,7 @@
                 </div>
 
                 <div class="step-card bg-white p-6 rounded-2xl border border-slate-200 flex-1 w-full relative">
-                    <video class="frame-capture mb-4" src="video_janome-threading.mp4#t=36" preload="metadata" muted playsinline></video>
+                    <video class="frame-capture mb-4" src="video_janome-threading.mp4#t=36" autoplay muted playsinline></video>
                     <span class="text-blue-600 font-black text-xl mb-2 block">02 <i class="fa-solid fa-flag-checkered text-slate-300 ml-2 align-middle"></i></span>
                     <h4 class="font-bold text-lg">El tap de bobina</h4>
                     <p class="text-sm text-slate-600 mt-2">Insereix el tap de bobina adequat per a la mida del teu rodet i prem-lo fermament perquè el rodet no balli.</p>
@@ -193,37 +192,32 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="step-card bg-white p-5 rounded-2xl border border-slate-200 relative">
-                    <video class="frame-capture mb-3" src="video_janome-threading.mp4#t=55" preload="metadata" muted playsinline></video>
+                    <video class="frame-capture mb-3" src="video_janome-threading.mp4#t=55" autoplay muted playsinline></video>
                     <span class="text-blue-600 font-black text-xl">01 <i class="fa-solid fa-arrow-right-long text-slate-300 ml-2 align-middle"></i></span>
                     <h4 class="font-bold mt-1">Primera guia de fil</h4>
                     <p class="text-xs text-slate-500 mt-1">Mantén el fil amb les dues hands. Passa'l per sota de la primera guia metàl·lica superior esquerra fins que faci "clic".</p>
                 </div>
 
                 <div class="step-card bg-white p-5 rounded-2xl border border-slate-200 relative">
-                    <video class="frame-capture mb-3" src="video_janome-threading.mp4#t=62" preload="metadata" muted playsinline></video>
+                    <video class="frame-capture mb-3" src="video_janome-threading.mp4#t=62" autoplay muted playsinline></video>
                     <span class="text-blue-600 font-black text-xl">02 <i class="fa-solid fa-arrow-right-long text-slate-300 ml-2 align-middle"></i></span>
                     <h4 class="font-bold mt-1">Canal de baixada (2)</h4>
                     <p class="text-xs text-slate-500 mt-1">Baixa el fil directament pel canal vertical dret, estirant-lo perquè entri als discs de tensió amagats.</p>
                 </div>
 
                 <div class="step-card bg-white p-5 rounded-2xl border border-slate-200 relative">
-                    <video class="frame-capture mb-3" src="video_janome-threading.mp4#t=68" preload="metadata" muted playsinline></video>
+                    <video class="frame-capture mb-3" src="video_janome-threading.mp4#t=68" autoplay muted playsinline></video>
                     <span class="text-blue-600 font-black text-xl">03 <i class="fa-solid fa-arrow-right-long text-slate-300 ml-2 align-middle"></i></span>
                     <h4 class="font-bold mt-1">Gir en forma d'U (3)</h4>
                     <p class="text-xs text-slate-500 mt-1">Arriba a la part inferior del canal dret, passa el fil per sota i puja'l pel canal de l'esquerra.</p>
                 </div>
 
                 <div class="step-card bg-white p-5 rounded-2xl border border-slate-200 relative">
-                    <video class="frame-capture mb-3" src="video_janome-threading.mp4#t=75" preload="metadata" muted playsinline></video>
+                    <video class="frame-capture mb-3" src="video_janome-threading.mp4#t=75" autoplay muted playsinline></video>
                     <span class="text-blue-600 font-black text-xl">04 <i class="fa-solid fa-flag-checkered text-slate-300 ml-2 align-middle"></i></span>
                     <h4 class="font-bold mt-1">Palanca tira-fils (4 i 5)</h4>
                     <p class="text-xs text-slate-500 mt-1">Passa el fil de dreta a esquerra per l'ull de la palanca metàl·lica superior i baixa'l de nou pel canal esquerre.</p>
                 </div>
-            </div>
-
-            <div class="bg-blue-50 p-5 rounded-xl border border-blue-100 flex items-start space-x-4">
-                <i class="fa-solid fa-circle-info text-blue-600 text-xl mt-1"></i>
-                <p class="text-blue-800 text-sm"><strong>Consell Pro:</strong> Si el fil es destensa mentre fas aquest recorregut, pot ser que no quedi bé atrapat en els discs de tensió. Mantén una lleugera tensió amb la mà dreta al rodet.</p>
             </div>
 
             <div class="flex justify-between pt-8 border-t border-slate-200">
@@ -249,62 +243,36 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="step-card bg-white p-5 rounded-2xl border border-slate-200 relative">
-                    <video class="frame-capture mb-3" src="video_janome-threading.mp4#t=82" preload="metadata" muted playsinline></video>
+                    <video class="frame-capture mb-3" src="video_janome-threading.mp4#t=82" autoplay muted playsinline></video>
                     <span class="text-blue-600 font-black text-xl">01 <i class="fa-solid fa-arrow-right-long text-slate-300 ml-2 align-middle"></i></span>
                     <h4 class="font-bold mt-1">Guia número 6</h4>
                     <p class="text-xs text-slate-600 mt-1">Enganxa el fil per darrere de la petita guia metàl·lica (marcada amb el número 6) que es troba just damunt de l'agulla.</p>
                 </div>
 
                 <div class="step-card bg-white p-5 rounded-2xl border border-slate-200 relative">
-                    <video class="frame-capture mb-3" src="video_janome-threading.mp4#t=91" preload="metadata" muted playsinline></video>
+                    <video class="frame-capture mb-3" src="video_janome-threading.mp4#t=91" autoplay muted playsinline></video>
                     <span class="text-blue-600 font-black text-xl">02 <i class="fa-solid fa-arrow-right-long text-slate-300 ml-2 align-middle"></i></span>
                     <h4 class="font-bold mt-1">Baixar el prensateles</h4>
                     <p class="text-xs text-slate-600 mt-1"><strong>Pas crucial:</strong> Baixa la palanca del prensateles. Això bloqueja la tensió del fil superior, un requisit indispensable abans de tallar-lo i utilitzar l'enfilador.</p>
                 </div>
 
                 <div class="step-card bg-white p-5 rounded-2xl border border-slate-200 relative">
-                    <video class="frame-capture mb-3" src="video_janome-threading.mp4#t=107" preload="metadata" muted playsinline></video>
+                    <video class="frame-capture mb-3" src="video_janome-threading.mp4#t=107" autoplay muted playsinline></video>
                     <span class="text-blue-600 font-black text-xl">03 <i class="fa-solid fa-arrow-right-long text-slate-300 ml-2 align-middle"></i></span>
                     <h4 class="font-bold mt-1">Preparar i tallar el fil (7)</h4>
                     <p class="text-xs text-slate-600 mt-1">Fes passar el fil per les guies de l'enfilador (7) i estira'l cap a l'esquerra per <strong>tallar l'excés</strong> amb la fulla lateral de la màquina.</p>
                 </div>
 
                 <div class="step-card bg-white p-5 rounded-2xl border border-slate-200 relative">
-                    <video class="frame-capture mb-3" src="video_janome-threading.mp4#t=120" preload="metadata" muted playsinline></video>
+                    <video class="frame-capture mb-3" src="video_janome-threading.mp4#t=120" autoplay muted playsinline></video>
                     <span class="text-blue-600 font-black text-xl">04 <i class="fa-solid fa-flag-checkered text-slate-300 ml-2 align-middle"></i></span>
                     <h4 class="font-bold mt-1">Accionar l'enfilador</h4>
                     <p class="text-xs text-slate-600 mt-1"><strong>Baixa completament</strong> la palanca de l'enfilador i tot seguit <strong>allibera-la suaument</strong>. El mecanisme passarà el fil creant un bucle darrere l'agulla. Estira'l!</p>
                 </div>
             </div>
-
-            <div class="text-center py-10 bg-green-50 rounded-3xl border-2 border-dashed border-green-300 mt-10">
-                <i class="fa-solid fa-unlock text-4xl text-green-500 mb-4"></i>
-                <h4 class="font-bold text-green-800 text-xl mb-2">Has acabat! Llest per cosir.</h4>
-                <p class="text-green-700 mb-6 max-w-lg mx-auto">El fil superior ja està llest. Ara només recorda prémer la icona de desbloqueig a la pantalla LCD i pujar el prensateles si ho necessites abans de posar la tela.</p>
-                <button onclick="showPage('inici')" class="bg-green-600 text-white px-10 py-3 rounded-full font-bold shadow-lg hover:bg-green-700 transition transform hover:-translate-y-1">Tornar a l'Inici</button>
-            </div>
         </section>
 
     </main>
-
-    <footer class="bg-white border-t border-slate-200 py-10 mt-12">
-        <div class="flex flex-col items-center justify-center space-y-4">
-            <div class="flex items-center space-x-2 text-slate-400">
-                <i class="fa-solid fa-needle"></i>
-                <span class="font-semibold tracking-wide">Janome MC1000 Guide</span>
-            </div>
-            <div class="flex flex-col items-center space-y-2">
-                <div class="flex items-center space-x-2 text-xs text-slate-400">
-                    <i class="fab fa-creative-commons"></i>
-                    <i class="fab fa-creative-commons-by"></i>
-                    <i class="fab fa-creative-commons-nc"></i>
-                    <span>Aquesta obra està sota una llicència CC BY-NC 4.0</span>
-                </div>
-                <p class="text-slate-400 text-xs">© 2024 Guia d'Enfilat Interactiva per Ignasi Sanchez. Es permet la reproducció no lucrativa citant l'autoria.</p>
-            </div>
-            <img src="logomentoria.png" alt="Mentories 4.0" class="h-8 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition">
-        </div>
-    </footer>
 
     <script>
         // Lògica de navegació
@@ -312,7 +280,6 @@
             document.querySelectorAll('.page-content').forEach(page => {
                 page.classList.add('hidden');
             });
-            
             document.getElementById('page-' + pageId).classList.remove('hidden');
             
             document.querySelectorAll('.nav-btn').forEach(btn => {
@@ -324,14 +291,13 @@
                 activeBtn.classList.remove('text-slate-500');
                 activeBtn.classList.add('text-blue-600', 'border-b-2', 'border-blue-600');
             }
-
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             showPage('inici');
 
-            // --- SISTEMA DE SUBTÍTOLS ---
+            // --- SISTEMA DE SUBTÍTOLS DEL VÍDEO PRINCIPAL ---
             const vttContent = `WEBVTT
 
 00:00:06.000 --> 00:00:11.000
@@ -389,51 +355,29 @@ Baixeu completament la palanca de l'enfilador i allibereu-la suaument perquè pa
                 mainVideo.appendChild(track);
             }
 
-            // --- REPRODUCCIÓ CONTÍNUA EN BUCLE (ESTIL GIF) ---
-            const targetesPasAPas = document.querySelectorAll('.step-card');
+            // --- LÒGICA DIRECTA: REPRODUEIX 3 SEGONS I TORNA ---
+            const videosPasAPas = document.querySelectorAll('.step-card video');
 
-            targetesPasAPas.forEach(targeta => {
-                const video = targeta.querySelector('video');
+            videosPasAPas.forEach(video => {
+                let inici = 0;
                 
-                // Si la targeta no té vídeo o és el tutorial principal, saltem a la següent
-                if (!video || video.id === 'main-tutorial-video') return;
-
-                // 1. REQUISITS OBLIGATORIS PER AUTOPLAY ALS NAVEGADORS
-                video.muted = true;
-                video.defaultMuted = true;
-                video.playsInline = true;
-
-                let segonInici = 0;
-                const duracioGif = 3; // Quants segons dura la mini-seqüència
-
-                // Extraiem el moment exacte on ha de començar
-                const src = video.getAttribute('src');
-                if (src && src.includes('#t=')) {
-                    segonInici = parseFloat(src.split('#t='));
+                // Llegim de quin segon parteix l'enllaç del vídeo (ex: #t=26)
+                if (video.src.includes('#t=')) {
+                    inici = parseFloat(video.src.split('#t='));
                 }
-
-                // 2. ARRENCADA IMMEDIATA
-                video.currentTime = segonInici;
-                const arrancarVideo = () => {
-                    const playPromise = video.play();
-                    if (playPromise !== undefined) {
-                        playPromise.catch(error => {
-                            // Si el navegador el bloqueja inicialment, ho seguirem intentant en silenci
-                            console.warn("Autoplay bloquejat temporalment", error);
-                        });
-                    }
-                };
                 
-                // Esperem 100ms per assegurar que el DOM està llest abans de fer play
-                setTimeout(arrancarVideo, 100);
+                // Volem que es reprodueixi durant 3 segons màxim
+                const final = inici + 3; 
 
-                // 3. MANTENIR EL BUCLE VINCULAT AL FRAGMENT EXACTE
+                // Cada vegada que el temps avança, comprovem si ha passat el límit
                 video.addEventListener('timeupdate', () => {
-                    // Quan arribi al final dels 3 segons estipulats...
-                    if (video.currentTime >= (segonInici + duracioGif)) {
-                        // ...torna al principi i segueix reproduint
-                        video.currentTime = segonInici;
-                        video.play().catch(e => {}); 
+                    if (video.currentTime >= final) {
+                        video.currentTime = inici; // Torna directament a l'inici, tan simple com això
+                    }
+                    
+                    // Comprovació extra de seguretat per si el vídeo carrega malament i es posa al minut 0
+                    if (video.currentTime < inici) {
+                        video.currentTime = inici;
                     }
                 });
             });
