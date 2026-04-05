@@ -58,19 +58,19 @@
         }
     </style>
 </head>
-<body class="bg-indigo-900 text-white text-center">
+<body class="bg-white text-slate-800">
 
     <!-- Navegació -->
     <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-2">
-                    <i class="fa-solid fa-needle text-blue-600 text-2xl"></i>
-                    <span class="font-bold text-xl tracking-tight">JanomeGuideZXCViunamverda</span>
+                                    <div class="flex items-center space-x-3">
+                    <img src="https://i.ibb.co/L6v3ZpX/mentories.png" alt="Mentories 4.0" class="h-10">
+                    <span class="font-bold text-xl tracking-tight text-slate-800">Janome Guide</span>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <button onclick="showPage('inici')" class="nav-btn font-medium text-slate-500 hover:text-blue-600 transition" id="btn-inici">Inici</button>
-                    <button onclick="showPage('preparacio brutalisimmmmmmasdfasdf')" class="nav-btn font-medium text-slate-500 hover:text-blue-600 transition" id="btn-preparacio">Preparació</button>
+                    <button onclick="showPage('preparacio')" class="nav-btn font-medium text-slate-500 hover:text-blue-600 transition" id="btn-preparacio">Preparació</button>
                     <button onclick="showPage('bobina')" class="nav-btn font-medium text-slate-500 hover:text-blue-600 transition" id="btn-bobina">La Bobina</button>
                     <button onclick="showPage('enfilat')" class="nav-btn font-medium text-slate-500 hover:text-blue-600 transition" id="btn-enfilat">Enfilat Superior</button>
                     <button onclick="showPage('agulla')" class="nav-btn font-medium text-slate-500 hover:text-blue-600 transition" id="btn-agulla">L'Agulla</button>
@@ -85,8 +85,8 @@
         <!-- PÀGINA 1: INICI -->
         <section id="page-inici" class="page-content space-y-12">
             <div class="text-center space-y-4">
-                <h1 class="text-5xl font-extrabold text-indigo-200">PERO MIRA MIRA MIAR COI Com que com como com enfilar la teva Janome Memory Craft 1000</h1>
-                <p class="text-xl text-indigo-300 max-w-2xl mx-auto">PUTA QUIGA DE MERDA Guia visual interactiva pas a pas optimitzada per a dispositius mòbils i tauletes.</p>
+                                <h1 class="text-5xl font-extrabold text-slate-900 leading-tight">Com enfilar la teva Janome Memory Craft 1000</h1>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto">Guia visual interactiva pas a pas per a un enfilat perfecte.</p>
                 <div class="pt-6">
                     <button onclick="showPage('preparacio')" class="bg-blue-600 text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-blue-700 transition transform hover:scale-105">
                         Comença el Tutorial <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -103,7 +103,7 @@
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <h3 class="font-bold mb-2">Seguretat Primer</h3>
-                    <p class="text-sm text-slate-500">vinga vinda vinga Aprendre a bloquejar la màquina abans de manipular l'agulla.</p>
+                    <p class="text-sm text-slate-500">Aprendre a bloquejar la màquina abans de manipular l'agulla.</p>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
                     <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -313,13 +313,22 @@
     </main>
 
     <footer class="bg-white border-t border-slate-200 py-10 mt-12">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <div class="flex justify-center items-center space-x-2 text-slate-400 mb-4">
-                <i class="fa-solid fa-needle"></i>
-                <span class="font-semibold tracking-wide">Janome MC1000 Guide</span>
+                    <div class="flex flex-col items-center justify-center space-y-4">
+                <div class="flex items-center space-x-2 text-slate-400">
+                    <i class="fa-solid fa-needle"></i>
+                    <span class="font-semibold tracking-wide">Janome MC1000 Guide</span>
+                </div>
+                <div class="flex flex-col items-center space-y-2">
+                    <div class="flex items-center space-x-2 text-xs text-slate-400">
+                        <i class="fab fa-creative-commons"></i>
+                        <i class="fab fa-creative-commons-by"></i>
+                        <i class="fab fa-creative-commons-nc"></i>
+                        <span>Aquesta obra està sota una llicència CC BY-NC 4.0</span>
+                    </div>
+                    <p class="text-slate-400 text-xs">© 2024 Guia d'Enfilat Interactiva. Es permet la reproducció no lucrativa citant l'autoria.</p>
+                </div>
+                <img src="https://i.ibb.co/L6v3ZpX/mentories.png" alt="Mentories 4.0" class="h-8 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition">
             </div>
-            <p class="text-slate-400 text-sm">© 2024 Guia d'Enfilat Interactiva amb subtítols en català i temps perfectes.</p>
-        </div>
     </footer>
 
     <script>
