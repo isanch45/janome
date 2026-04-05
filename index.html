@@ -416,21 +416,38 @@ Baixeu completament la palanca de l'enfilador i allibereu-la suaument perquè pa
                 track.src = trackUrl;
                 mainVideo.appendChild(track);
             }
-
-            // Lògica de l'efecte GIF per als vídeos de la bobina
+// Lògica de l'efecte GIF per als vídeos de la bobina
             const bobinaVideos = document.querySelectorAll('.bobina-gif-effect');
 
             bobinaVideos.forEach(video => {
+                let segonInici = 0;
+                const duracioGif = 4; // Defineix quants segons vols que duri el bucle del GIF
+
+                const fragmentTemps = video.src.match(/#t=(\d+)/);
+                if (fragmentTemps && fragmentTemps) {
+                    segonInici = parseInt(fragmentTemps, 10);
+                }
+
+                // Quan el ratolí entra, comença a reproduir
                 video.addEventListener('mouseenter', () => {
                     video.play();
                 });
 
+                // Quan el ratolí marxa, pausa i torna al fotograma inicial
                 video.addEventListener('mouseleave', () => {
                     video.pause();
-                    video.currentTime = 0;
+                    video.currentTime = segonInici; 
+                });
+
+                // Control mentre s'està reproduint
+                video.addEventListener('timeupdate', () => {
+                    // Si el vídeo avança més segons dels que li hem dit (ex: 4 segons),
+                    // el tornem a l'inici per fer l'efecte de bucle (loop)
+                    if (video.currentTime >= segonInici + duracioGif) {
+                        video.currentTime = segonInici;
+                    }
                 });
             });
-        });
     </script>
 </body>
 </html>
