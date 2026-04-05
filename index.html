@@ -274,7 +274,7 @@
 
     </main>
 
-    <script>
+<script>
         // Lògica de navegació
         function showPage(pageId) {
             document.querySelectorAll('.page-content').forEach(page => {
@@ -355,31 +355,33 @@ Baixeu completament la palanca de l'enfilador i allibereu-la suaument perquè pa
                 mainVideo.appendChild(track);
             }
 
-            // --- LÒGICA DIRECTA: REPRODUEIX 3 SEGONS I TORNA ---
+            // --- LÒGICA ESTRICTA: CRONÒMETRE PER BUCLES PERFECTES ---
             const videosPasAPas = document.querySelectorAll('.step-card video');
 
             videosPasAPas.forEach(video => {
                 let inici = 0;
                 
-                // Llegim de quin segon parteix l'enllaç del vídeo (ex: #t=26)
-                if (video.src.includes('#t=')) {
-                    inici = parseFloat(video.src.split('#t='));
+                // Extraiem el moment exacte del paràmetre src de manera segura
+                const atributSrc = video.getAttribute('src');
+                if (atributSrc && atributSrc.includes('#t=')) {
+                    inici = parseFloat(atributSrc.split('#t='));
                 }
                 
-                // Volem que es reprodueixi durant 3 segons màxim
-                const final = inici + 3; 
+                const final = inici + 3; // Afegim els 3 segons d'acció
 
-                // Cada vegada que el temps avança, comprovem si ha passat el límit
-                video.addEventListener('timeupdate', () => {
+                // Vigilem el temps cada 100 mil·lisegons
+                setInterval(() => {
+                    // Si el vídeo avança més enllà dels 3 segons indicats...
                     if (video.currentTime >= final) {
-                        video.currentTime = inici; // Torna directament a l'inici, tan simple com això
+                        video.currentTime = inici; // Retorna al principi del tall
+                        video.play().catch(e => {}); // Força a seguir reproduint per si es pausa
                     }
                     
-                    // Comprovació extra de seguretat per si el vídeo carrega malament i es posa al minut 0
-                    if (video.currentTime < inici) {
+                    // Doble comprovació per si el navegador es torna boig i envia el vídeo al minut 0
+                    if (video.currentTime < inici && video.readyState > 0) {
                         video.currentTime = inici;
                     }
-                });
+                }, 100);
             });
         });
     </script>
