@@ -63,7 +63,7 @@
     <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
-                                    <div class="flex items-center space-x-3">
+                <div class="flex items-center space-x-3">
                     <img src="logomentoria.png" alt="Mentories 4.0" class="h-10">
                     <span class="font-bold text-xl tracking-tight text-slate-800">Janome Guide</span>
                 </div>
@@ -82,7 +82,7 @@
         
         <section id="page-inici" class="page-content space-y-12">
             <div class="text-center space-y-4">
-                                <h1 class="text-5xl font-extrabold text-slate-900 leading-tight">Com enfilar la teva Janome Memory Craft 1000</h1>
+                <h1 class="text-5xl font-extrabold text-slate-900 leading-tight">Com enfilar la teva Janome Memory Craft 1000</h1>
                 <p class="text-xl text-slate-600 max-w-2xl mx-auto">Guia visual interactiva pas a pas per a un enfilat perfecte.</p>
                 <div class="pt-6">
                     <button onclick="showPage('preparacio')" class="bg-blue-600 text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-blue-700 transition transform hover:scale-105">
@@ -287,26 +287,26 @@
     </main>
 
     <footer class="bg-white border-t border-slate-200 py-10 mt-12">
-                    <div class="flex flex-col items-center justify-center space-y-4">
-                <div class="flex items-center space-x-2 text-slate-400">
-                    <i class="fa-solid fa-needle"></i>
-                    <span class="font-semibold tracking-wide">Janome MC1000 Guide</span>
-                </div>
-                <div class="flex flex-col items-center space-y-2">
-                    <div class="flex items-center space-x-2 text-xs text-slate-400">
-                        <i class="fab fa-creative-commons"></i>
-                        <i class="fab fa-creative-commons-by"></i>
-                        <i class="fab fa-creative-commons-nc"></i>
-                        <span>Aquesta obra està sota una llicència CC BY-NC 4.0</span>
-                    </div>
-                    <p class="text-slate-400 text-xs">© 2024 Guia d'Enfilat Interactiva per Ignasi Sanchez. Es permet la reproducció no lucrativa citant l'autoria.</p>
-                </div>
-                <img src="logomentoria.png" alt="Mentories 4.0" class="h-8 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition">
+        <div class="flex flex-col items-center justify-center space-y-4">
+            <div class="flex items-center space-x-2 text-slate-400">
+                <i class="fa-solid fa-needle"></i>
+                <span class="font-semibold tracking-wide">Janome MC1000 Guide</span>
             </div>
+            <div class="flex flex-col items-center space-y-2">
+                <div class="flex items-center space-x-2 text-xs text-slate-400">
+                    <i class="fab fa-creative-commons"></i>
+                    <i class="fab fa-creative-commons-by"></i>
+                    <i class="fab fa-creative-commons-nc"></i>
+                    <span>Aquesta obra està sota una llicència CC BY-NC 4.0</span>
+                </div>
+                <p class="text-slate-400 text-xs">© 2024 Guia d'Enfilat Interactiva per Ignasi Sanchez. Es permet la reproducció no lucrativa citant l'autoria.</p>
+            </div>
+            <img src="logomentoria.png" alt="Mentories 4.0" class="h-8 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition">
+        </div>
     </footer>
 
     <script>
-                // Lògica de navegació
+        // Lògica de navegació
         function showPage(pageId) {
             document.querySelectorAll('.page-content').forEach(page => {
                 page.classList.add('hidden');
@@ -390,55 +390,56 @@ Baixeu completament la palanca de l'enfilador i allibereu-la suaument perquè pa
                 track.src = trackUrl;
                 mainVideo.appendChild(track);
             }
-// Lògica de l'efecte GIF per als vídeos de la bobina
-        const bobinaVideos = document.querySelectorAll('.bobina-gif-effect');
 
-        bobinaVideos.forEach(video => {
-            let segonInici = 0;
-            const duracioGif = 4; // Quants segons dura el bucle
-            let estaHover = false; // Variable per saber si el ratolí hi és o no
+            // Lògica de l'efecte GIF per als vídeos de la bobina
+            const bobinaVideos = document.querySelectorAll('.bobina-gif-effect');
 
-            // LLegim l'atribut original de l'HTML perquè el navegador no ens amagui el #t=
-            const srcOriginal = video.getAttribute('src');
-            if (srcOriginal) {
-                const fragmentTemps = srcOriginal.match(/#t=(\d+)/);
-                if (fragmentTemps && fragmentTemps) {
-                    segonInici = parseInt(fragmentTemps, 10);
-                }
-            }
+            bobinaVideos.forEach(video => {
+                let segonInici = 0;
+                const duracioGif = 4; // Quants segons dura el bucle
+                let estaHover = false; // Variable per saber si el ratolí hi és o no
 
-            video.addEventListener('mouseenter', () => {
-                estaHover = true;
-                video.currentTime = segonInici; // Ens assegurem que comença on toca
-                
-                // Gestionem la promesa per evitar l'error de moure el ratolí massa ràpid
-                const playPromise = video.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                        console.log("No s'ha pogut auto-reproduir: ", error);
-                    });
-                }
-            });
-
-            video.addEventListener('mouseleave', () => {
-                estaHover = false;
-                video.pause();
-                video.currentTime = segonInici; // Torna al fotograma original i es queda quiet
-            });
-
-            video.addEventListener('timeupdate', () => {
-                // Només fem el bucle si el ratolí està a sobre
-                if (estaHover && video.currentTime >= (segonInici + duracioGif)) {
-                    video.currentTime = segonInici;
-                    // L'obliguem a seguir reproduint per si en saltar enrere es pausa
-                    const playPromise = video.play();
-                    if (playPromise !== undefined) {
-                        playPromise.catch(e => console.log(e));
+                // LLegim l'atribut original de l'HTML perquè el navegador no ens amagui el #t=
+                const srcOriginal = video.getAttribute('src');
+                if (srcOriginal) {
+                    const fragmentTemps = srcOriginal.match(/#t=(\d+)/);
+                    if (fragmentTemps && fragmentTemps) {
+                        segonInici = parseInt(fragmentTemps, 10);
                     }
                 }
+
+                video.addEventListener('mouseenter', () => {
+                    estaHover = true;
+                    video.currentTime = segonInici; // Ens assegurem que comença on toca
+                    
+                    // Gestionem la promesa per evitar l'error de moure el ratolí massa ràpid
+                    const playPromise = video.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(error => {
+                            console.log("No s'ha pogut auto-reproduir: ", error);
+                        });
+                    }
+                });
+
+                video.addEventListener('mouseleave', () => {
+                    estaHover = false;
+                    video.pause();
+                    video.currentTime = segonInici; // Torna al fotograma original i es queda quiet
+                });
+
+                video.addEventListener('timeupdate', () => {
+                    // Només fem el bucle si el ratolí està a sobre
+                    if (estaHover && video.currentTime >= (segonInici + duracioGif)) {
+                        video.currentTime = segonInici;
+                        // L'obliguem a seguir reproduint per si en saltar enrere es pausa
+                        const playPromise = video.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(e => console.log(e));
+                        }
+                    }
+                });
             });
         });
-            
     </script>
 </body>
 </html>
