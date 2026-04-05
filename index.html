@@ -170,7 +170,7 @@
             <div class="flex flex-col md:flex-row gap-6 items-center md:items-stretch">
                 <!-- Pas 2.1 -->
                 <div class="step-card bg-white p-6 rounded-2xl border border-slate-200 flex-1 w-full relative">
-                    <video class="frame-capture mb-4" src="video_janome-threading.mp4#t=26" preload="metadata" muted playsinline></video>
+                    <video class="frame-capture bobina-gif-effect mb-4" src="video_janome-threading.mp4#t=26" preload="metadata" muted playsinline></video>
                     <span class="text-blue-600 font-black text-xl mb-2 block">01 <i class="fa-solid fa-arrow-right-long text-slate-300 ml-2 align-middle"></i></span>
                     <h4 class="font-bold text-lg">Col·locar el rodet</h4>
                     <p class="text-sm text-slate-600 mt-2">Posa el rodet de fil al passador horitzontal. Assegura't que el fil es desenrotlli per la part superior i cap a tu.</p>
@@ -184,7 +184,7 @@
 
                 <!-- Pas 2.2 -->
                 <div class="step-card bg-white p-6 rounded-2xl border border-slate-200 flex-1 w-full relative">
-                    <video class="frame-capture mb-4" src="video_janome-threading.mp4#t=36" preload="metadata" muted playsinline></video>
+                    <video class="frame-capture bobina-gif-effect mb-4" src="video_janome-threading.mp4#t=36" preload="metadata" muted playsinline></video>
                     <span class="text-blue-600 font-black text-xl mb-2 block">02 <i class="fa-solid fa-flag-checkered text-slate-300 ml-2 align-middle"></i></span>
                     <h4 class="font-bold text-lg">El tap de bobina</h4>
                     <p class="text-sm text-slate-600 mt-2">Insereix el tap de bobina adequat per a la mida del teu rodet i prem-lo fermament perquè el rodet no balli.</p>
@@ -341,13 +341,13 @@
             document.getElementById('page-' + pageId).classList.remove('hidden');
             
             document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('text-blue-400', 'border-b-2', 'border-blue-400');
-                btn.classList.add('text-indigo-300');
+                btn.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600');
+                btn.classList.add('text-slate-500');
             });
             const activeBtn = document.getElementById('btn-' + pageId);
             if(activeBtn) {
-                activeBtn.classList.remove('text-indigo-300');
-                activeBtn.classList.add('text-blue-400', 'border-b-2', 'border-blue-400');
+                activeBtn.classList.remove('text-slate-500');
+                activeBtn.classList.add('text-blue-600', 'border-b-2', 'border-blue-600');
             }
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -416,5 +416,25 @@ Baixeu completament la palanca de l'enfilador i allibereu-la suaument perquè pa
                 track.src = trackUrl;
                 mainVideo.appendChild(track);
             }
+
+            // Lògica de l'efecte GIF per als vídeos de la bobina
+            const bobinaVideos = document.querySelectorAll('.bobina-gif-effect');
+            let leaveTimeout;
+
+            bobinaVideos.forEach(video => {
+                video.addEventListener('mouseenter', () => {
+                    clearTimeout(leaveTimeout);
+                    video.play();
+                });
+
+                video.addEventListener('mouseleave', () => {
+                    leaveTimeout = setTimeout(() => {
+                        video.pause();
+                        video.currentTime = 0;
+                    }, 1000); // Espera 1 segon abans de pausar i reiniciar
+                });
+            });
         });
     </script>
+</body>
+</html>
