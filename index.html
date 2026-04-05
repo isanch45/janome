@@ -356,33 +356,32 @@ Baixeu completament la palanca de l'enfilador i allibereu-la suaument perquè pa
             mainVideo.appendChild(track);
         }
 
-        // 3. BUCLE DE 3 SEGONS (VÍDEOS LOCALS - ESTIL GIF)
-        const videosPasAPas = document.querySelectorAll('.step-card video');
+        // 3. REPRODUCCIÓ DE 3 SEGONS DELS VÍDEOS DE PAS
+        const stepVideos = document.querySelectorAll('.step-card video');
 
-        videosPasAPas.forEach(video => {
-            // Llegim el segon d'inici de l'atribut src (ex: video.mp4#t=26)
+        stepVideos.forEach(video => {
             const src = video.getAttribute('src');
-            let inici = 0;
+            let startTime = 0;
             
             if (src && src.includes('#t=')) {
-                inici = parseFloat(src.split('#t='));
+                startTime = parseFloat(src.split('#t=')[1]);
             }
 
-            const final = inici + 3;
+            const endTime = startTime + 3;
 
-            // En ordinadors podem forçar el mute i el play immediatament
-            video.muted = true;
-            video.currentTime = inici;
+            video.currentTime = startTime;
 
-            // Escoltador d'esdeveniment per fer el bucle
             video.addEventListener('timeupdate', function() {
-                if (this.currentTime >= final) {
-                    this.currentTime = inici;
+                if (this.currentTime >= endTime) {
+                    this.pause();
+                    this.currentTime = startTime; // Reseteja per a la pròxima reproducció
                 }
             });
 
-            // Ens assegurem que el vídeo es reprodueixi
-            video.play();
+            video.parentElement.addEventListener('mouseenter', () => {
+                video.currentTime = startTime;
+                video.play();
+            });
         });
     });
 </script>
