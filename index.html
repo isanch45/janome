@@ -65,10 +65,11 @@
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center space-x-3">
                     <img src="logomentoria.png" alt="Mentories 4.0" class="h-10">
-                    <span class="font-bold text-xl tracking-tight text-slate-800">Janome Guide</span>
+                    <span class="font-bold text-xl tracking-tight text-slate-800">Janome Tutorials</span>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <button onclick="showPage('inici')" class="nav-btn font-medium text-slate-500 hover:text-blue-600 transition" id="btn-inici">Inici</button>
+                    <button onclick="showPage('inici')" class="nav-btn font-medium text-slate-500 hover:text-blue-600 transition" id="btn-inici">Benvinguda</button>
+                    <button onclick="showPage('tutorials')" class="nav-btn font-medium text-slate-500 hover:text-blue-600 transition" id="btn-tutorials">Tutorials</button>
                     <button onclick="showPage('preparacio')" class="nav-btn font-medium text-slate-500 hover:text-blue-600 transition" id="btn-preparacio">Preparació</button>
                     <button onclick="showPage('bobina')" class="nav-btn font-medium text-slate-500 hover:text-blue-600 transition" id="btn-bobina">La Bobina</button>
                     <button onclick="showPage('enfilat')" class="nav-btn font-medium text-slate-500 hover:text-blue-600 transition" id="btn-enfilat">Enfilat Superior</button>
@@ -84,7 +85,7 @@
             <div class="text-center space-y-4">
                 <h1 class="text-5xl font-extrabold text-slate-900 leading-tight">Com enfilar la teva Janome Memory Craft 1000</h1>
                 <p class="text-xl text-slate-600 max-w-2xl mx-auto">Guia visual interactiva pas a pas per a un enfilat perfecte.</p>
-                <div class="pt-6">
+                <div class="pt-6 hidden"> <!-- Hide this button, will be replaced by the tutorials page -->
                     <button onclick="showPage('preparacio')" class="bg-blue-600 text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-blue-700 transition transform hover:scale-105">
                         Comença el Tutorial <i class="fa-solid fa-arrow-right ml-2"></i>
                     </button>
@@ -118,6 +119,36 @@
             </div>
         </section>
 
+        <section id="page-tutorials" class="page-content hidden space-y-12">
+            <div class="text-center space-y-4">
+                <h1 class="text-5xl font-extrabold text-slate-900 leading-tight">Tria el teu tutorial</h1>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto">Selecciona la guia que vols seguir.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 text-center flex flex-col items-center justify-center">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                        <i class="fa-solid fa-arrow-up-right-dots"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-2">Enfilat Superior</h3>
+                    <p class="text-md text-slate-500 mb-6">Aprèn a enfilar el fil superior de la màquina pas a pas.</p>
+                    <button onclick="showPage('preparacio')" class="bg-blue-600 text-white px-6 py-3 rounded-full font-bold shadow hover:bg-blue-700 transition">
+                        Anar al Tutorial <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 text-center flex flex-col items-center justify-center">
+                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                        <i class="fa-solid fa-circle-notch"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-2">Bobinat i Col·locació</h3>
+                    <p class="text-md text-slate-500 mb-6">Descobreix com bobinar el fil a la bobina i col·locar-la correctament.</p>
+                    <button onclick="showPage('winding-bobbin')" class="bg-green-600 text-white px-6 py-3 rounded-full font-bold shadow hover:bg-green-700 transition">
+                        Anar al Tutorial <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
         <section id="page-preparacio" class="page-content hidden space-y-10">
             <div class="border-l-4 border-blue-600 pl-6 mb-8">
                 <h2 class="text-3xl font-bold">Pas 1: Preparació i Seguretat</h2>
@@ -146,7 +177,7 @@
             </div>
             
             <div class="flex justify-between pt-8 border-t border-slate-200">
-                <button onclick="showPage('inici')" class="text-slate-500 font-bold hover:text-slate-800 transition"><i class="fa-solid fa-arrow-left mr-2"></i> Torna a l'inici</button>
+                <button onclick="showPage('tutorials')" class="text-slate-500 font-bold hover:text-slate-800 transition"><i class="fa-solid fa-arrow-left mr-2"></i> Torna als tutorials</button>
                 <button onclick="showPage('bobina')" class="bg-slate-900 text-white px-8 py-3 rounded-xl font-bold shadow hover:bg-slate-800 transition">La Bobina <i class="fa-solid fa-arrow-right ml-2"></i></button>
             </div>
         </section>
@@ -179,7 +210,7 @@
             </div>
 
             <div class="flex justify-between pt-8 border-t border-slate-200">
-                <button onclick="showPage('preparacio')" class="text-slate-500 font-bold hover:text-slate-800 transition"><i class="fa-solid fa-arrow-left mr-2"></i> Enrere</button>
+                <button onclick="showPage('preparacio')" class="text-slate-500 font-bold hover:text-slate-800 transition"><i class="fa-solid fa-arrow-left mr-2"></i> Preparació</button>
                 <button onclick="showPage('enfilat')" class="bg-slate-900 text-white px-8 py-3 rounded-xl font-bold shadow hover:bg-slate-800 transition">Enfilat Superior <i class="fa-solid fa-arrow-right ml-2"></i></button>
             </div>
         </section>
@@ -221,7 +252,7 @@
             </div>
 
             <div class="flex justify-between pt-8 border-t border-slate-200">
-                <button onclick="showPage('bobina')" class="text-slate-500 font-bold hover:text-slate-800 transition"><i class="fa-solid fa-arrow-left mr-2"></i> Enrere</button>
+                <button onclick="showPage('bobina')" class="text-slate-500 font-bold hover:text-slate-800 transition"><i class="fa-solid fa-arrow-left mr-2"></i> El Rodet de Fil</button>
                 <button onclick="showPage('agulla')" class="bg-slate-900 text-white px-8 py-3 rounded-xl font-bold shadow hover:bg-slate-800 transition">Cap a l'Agulla <i class="fa-solid fa-arrow-right ml-2"></i></button>
             </div>
         </section>
@@ -235,7 +266,7 @@
             <div class="video-container shadow-2xl border-4 border-slate-900 mb-10 relative">
                 <video 
                     id="main-tutorial-video"
-                    class="absolute top-0 left-0 w-full h-full object-cover"
+                    class="absolute top-0 left-0 w-full h-full object-cover main-video-player"
                     src="video_janome-threading.mp4" 
                     controls>
                 </video>
@@ -271,12 +302,78 @@
                 </div>
             </div>
         </section>
+        
+        <section id="page-winding-bobbin" class="page-content hidden space-y-10">
+            <div class="border-l-4 border-green-600 pl-6 mb-8">
+                <h2 class="text-3xl font-bold">Tutorial: Bobinat i Col·locació de la Bobina</h2>
+                <p class="text-slate-600">Aprèn a bobinar el fil i a instal·lar la bobina inferior.</p>
+            </div>
+
+            <div class="video-container shadow-2xl border-4 border-slate-900 mb-10 relative">
+                <video 
+                    id="main-winding-video"
+                    class="absolute top-0 left-0 w-full h-full object-cover main-video-player"
+                    src="03 Winding the bobbin.f137.mp4" 
+                    controls>
+                </video>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="step-card bg-white p-5 rounded-2xl border border-slate-200 relative">
+                    <video class="frame-capture mb-3" src="03 Winding the bobbin.f137.mp4#t=15" autoplay muted playsinline></video>
+                    <span class="text-green-600 font-black text-xl">01 <i class="fa-solid fa-arrow-right-long text-slate-300 ml-2 align-middle"></i></span>
+                    <h4 class="font-bold mt-1">Extreure la bobina buida</h4>
+                    <p class="text-xs text-slate-600 mt-1">Retira la tapa de la bobina i extreu la bobina buida de la caixa per preparar-la per al bobinat.</p>
+                </div>
+
+                <div class="step-card bg-white p-5 rounded-2xl border border-slate-200 relative">
+                    <video class="frame-capture mb-3" src="03 Winding the bobbin.f137.mp4#t=32" autoplay muted playsinline></video>
+                    <span class="text-green-600 font-black text-xl">02 <i class="fa-solid fa-arrow-right-long text-slate-300 ml-2 align-middle"></i></span>
+                    <h4 class="font-bold mt-1">Col·locar el fil a l'eix de bobinat</h4>
+                    <p class="text-xs text-slate-600 mt-1">Posa la bobina buida a l'eix de bobinat de la màquina i el rodet de fil a l'eix superior.</p>
+                </div>
+
+                <div class="step-card bg-white p-5 rounded-2xl border border-slate-200 relative">
+                    <video class="frame-capture mb-3" src="03 Winding the bobbin.f137.mp4#t=120" autoplay muted playsinline></video>
+                    <span class="text-green-600 font-black text-xl">03 <i class="fa-solid fa-arrow-right-long text-slate-300 ml-2 align-middle"></i></span>
+                    <h4 class="font-bold mt-1">Guia de fil per bobinat</h4>
+                    <p class="text-xs text-slate-600 mt-1">Passa el fil per la guia de tensió del bobinador i enrotlla'l unes quantes vegades a la bobina.</p>
+                </div>
+
+                <div class="step-card bg-white p-5 rounded-2xl border border-slate-200 relative">
+                    <video class="frame-capture mb-3" src="03 Winding the bobbin.f137.mp4#t=195" autoplay muted playsinline></video>
+                    <span class="text-green-600 font-black text-xl">04 <i class="fa-solid fa-arrow-right-long text-slate-300 ml-2 align-middle"></i></span>
+                    <h4 class="font-bold mt-1">Iniciar el bobinat</h4>
+                    <p class="text-xs text-slate-600 mt-1">Empeny l'eix de bobinat cap a la dreta i prem el botó d'inici/aturada per començar a bobinar el fil.</p>
+                </div>
+
+                <div class="step-card bg-white p-5 rounded-2xl border border-slate-200 relative">
+                    <video class="frame-capture mb-3" src="03 Winding the bobbin.f137.mp4#t=240" autoplay muted playsinline></video>
+                    <span class="text-green-600 font-black text-xl">05 <i class="fa-solid fa-arrow-right-long text-slate-300 ml-2 align-middle"></i></span>
+                    <h4 class="font-bold mt-1">Col·locar la bobina plena</h4>
+                    <p class="text-xs text-slate-600 mt-1">Un cop plena, retira la bobina i insereix-la a la caixa, assegurant-te que el fil surt en la direcció correcta i passa per la ranura de tensió.</p>
+                </div>
+                
+                <div class="step-card bg-white p-5 rounded-2xl border border-slate-200 relative">
+                    <video class="frame-capture mb-3" src="03 Winding the bobbin.f137.mp4#t=327" autoplay muted playsinline></video>
+                    <span class="text-green-600 font-black text-xl">06 <i class="fa-solid fa-flag-checkered text-slate-300 ml-2 align-middle"></i></span>
+                    <h4 class="font-bold mt-1">Tancar la tapa</h4>
+                    <p class="text-xs text-slate-600 mt-1">Torna a col·locar la tapa de la bobina i desbloqueja la màquina per finalitzar el procés.</p>
+                </div>
+            </div>
+
+            <div class="flex justify-between pt-8 border-t border-slate-200">
+                <button onclick="showPage('tutorials')" class="text-slate-500 font-bold hover:text-slate-800 transition"><i class="fa-solid fa-arrow-left mr-2"></i> Torna als tutorials</button>
+                <button onclick="showPage('inici')" class="bg-slate-900 text-white px-8 py-3 rounded-xl font-bold shadow hover:bg-slate-800 transition">Finalitzar <i class="fa-solid fa-check ml-2"></i></button>
+            </div>
+        </section>
 
     </main>
 
 <script>
     // 1. NAVEGACIÓ ENTRE PÀGINES
     function showPage(pageId) {
+        // Hide all page content sections
         document.querySelectorAll('.page-content').forEach(page => {
             page.classList.add('hidden');
         });
@@ -285,18 +382,20 @@
         document.querySelectorAll('.nav-btn').forEach(btn => {
             btn.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600');
             btn.classList.add('text-slate-500');
+            btn.classList.remove('active'); // Ensure 'active' class is removed
         });
         
         const activeBtn = document.getElementById('btn-' + pageId);
         if(activeBtn) {
             activeBtn.classList.remove('text-slate-500');
             activeBtn.classList.add('text-blue-600', 'border-b-2', 'border-blue-600');
+            activeBtn.classList.add('active'); // Add 'active' class for styling
         }
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        showPage('inici');
+        showPage('inici'); // Start on the welcome page
 
         // 2. SUBTÍTOLS DEL VÍDEO PRINCIPAL
         const vttContent = `WEBVTT
@@ -343,20 +442,80 @@ Passeu el fil completament per l'enfilador (7) i talleu l'excés a la fulla del 
 00:01:56.000 --> 00:02:05.000
 Baixeu completament la palanca de l'enfilador i allibereu-la suaument perquè passi el fil, formant un bucle.`;
 
-        const blob = new Blob([vttContent], { type: 'text/vtt' });
-        const trackUrl = URL.createObjectURL(blob);
-        const mainVideo = document.getElementById('main-tutorial-video');
-        if (mainVideo) {
-            const track = document.createElement('track');
-            track.kind = 'subtitles';
-            track.label = 'Català';
-            track.srclang = 'ca';
-            track.default = true;
-            track.src = trackUrl;
-            mainVideo.appendChild(track);
+        const windingVttContent = `WEBVTT
+
+00:00:05.000 --> 00:00:09.000
+Benvinguts al tutorial de bobinat.
+
+00:00:15.000 --> 00:00:25.000
+Retireu la tapa de la bobina i extreu la bobina buida.
+
+00:00:29.000 --> 00:00:36.000
+Col·loqueu la bobina buida a l'eix de bobinat.
+
+00:00:50.000 --> 00:01:00.000
+Posa el rodet de fil a l'eix superior.
+
+00:01:04.000 --> 00:01:10.000
+Col·loca el tap de bobina per fixar el rodet.
+
+00:01:20.000 --> 00:01:28.000
+Passa el fil per la guia de tensió del bobinador.
+
+00:01:30.000 --> 00:01:40.000
+Enrotlla el fil unes quantes vegades a la bobina.
+
+00:01:46.000 --> 00:01:50.000
+Empeny l'eix de bobinat cap a la dreta.
+
+00:01:56.000 --> 00:02:00.000
+Prem el botó d'inici/aturada per començar a bobinar.
+
+00:02:10.000 --> 00:02:15.000
+Un cop plena, atura la màquina i talla el fil.
+
+00:02:19.000 --> 00:02:25.000
+Retira la bobina plena de l'eix.
+
+00:02:37.000 --> 00:02:48.000
+Insereix la bobina a la caixa, assegurant-te que el fil surt en la direcció correcta.
+
+00:02:54.000 --> 00:03:00.000
+Guia el fil per la ranura de tensió de la caixa de la bobina.
+
+00:03:27.000 --> 00:03:33.000
+Torna a col·locar la tapa de la bobina.
+
+00:03:36.000 --> 00:03:40.000
+Desbloqueja la màquina per continuar.`;
+
+        const vttData = {
+            'main-tutorial-video': vttContent,
+            'main-winding-video': windingVttContent
         }
 
-        // 3. REPRODUCCIÓ DE 3 SEGONS DELS VÍDEOS DE PAS
+        // Function to load VTT for a given video element
+        function loadVTT(videoId, content) {
+            const blob = new Blob([content], { type: 'text/vtt' });
+            const trackUrl = URL.createObjectURL(blob);
+            const videoElement = document.getElementById(videoId);
+            if (videoElement) {
+                const track = document.createElement('track');
+                track.kind = 'subtitles';
+                track.label = 'Català';
+                track.srclang = 'ca';
+                track.default = true;
+                track.src = trackUrl;
+                videoElement.appendChild(track);
+            }
+        }
+
+        // Load VTT for all main video players
+        for (const videoId in vttData) {
+            loadVTT(videoId, vttData[videoId]);
+        }
+
+        // 3. REPRODUCCIÓ DE 3 SEGONS DELS VÍDEOS DE PAS (amb reproducció única al hover)
         const stepVideos = document.querySelectorAll('.step-card video[autoplay]');
 
         stepVideos.forEach(video => {
@@ -372,10 +531,14 @@ Baixeu completament la palanca de l'enfilador i allibereu-la suaument perquè pa
             video.currentTime = startTime;
 
             video.addEventListener('timeupdate', function() {
-                if (this.currentTime >= endTime) {
+                // Stop if current time exceeds end time, but allow a small buffer for precision
+                if (this.currentTime >= endTime - 0.1) { 
                     this.pause();
-                    this.currentTime = startTime; // Reseteja per a la pròxima reproducció
+                    this.currentTime = startTime; // Reset for next hover
                 }
+            });
+            video.addEventListener('ended', function() { // Also reset if video naturally ends
+                this.currentTime = startTime;
             });
 
             video.parentElement.addEventListener('mouseenter', () => {
